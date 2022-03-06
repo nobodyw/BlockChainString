@@ -4,6 +4,8 @@
 
 tasks:
   - init: go get && go build ./... && go test ./...
-    command: go run;sudo curl https://get.starport.network/starport@v0.19.2! | bash
+    command: go run
+  - name: Install Starport
+    init: sudo curl https://get.starport.network/starport@v0.19.2! | bash
 
 
