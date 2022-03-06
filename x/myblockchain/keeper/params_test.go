@@ -3,9 +3,9 @@ package keeper_test
 import (
 	"testing"
 
-	"github.com/stretchr/testify/require"
 	testkeeper "github.com/cosmonaut/MyBlockchain/testutil/keeper"
 	"github.com/cosmonaut/MyBlockchain/x/myblockchain/types"
+	"github.com/stretchr/testify/require"
 )
 
 func TestGetParams(t *testing.T) {

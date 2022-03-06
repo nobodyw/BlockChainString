@@ -3,10 +3,10 @@ package keeper_test
 import (
 	"testing"
 
+	testkeeper "github.com/cosmonaut/MyBlockchain/testutil/keeper"
+	"github.com/cosmonaut/MyBlockchain/x/myblockchain/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
-	testkeeper 	"github.com/cosmonaut/MyBlockchain/testutil/keeper"
-	"github.com/cosmonaut/MyBlockchain/x/myblockchain/types"
 )
 
 func TestParamsQuery(t *testing.T) {

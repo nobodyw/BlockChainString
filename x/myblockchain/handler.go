@@ -3,9 +3,9 @@ package myblockchain
 import (
 	"fmt"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmonaut/MyBlockchain/x/myblockchain/keeper"
 	"github.com/cosmonaut/MyBlockchain/x/myblockchain/types"
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 

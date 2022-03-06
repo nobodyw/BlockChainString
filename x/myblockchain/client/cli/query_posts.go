@@ -1,7 +1,7 @@
 package cli
 
 import (
-	"context"
+	"strconv"
 
 	"github.com/cosmonaut/MyBlockchain/x/myblockchain/types"
 	"github.com/cosmos/cosmos-sdk/client"
@@ -9,17 +9,25 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func CmdQueryParams() *cobra.Command {
+var _ = strconv.Itoa(0)
+
+func CmdPosts() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "params",
-		Short: "shows the parameters of the module",
-		Args:  cobra.NoArgs,
-		RunE: func(cmd *cobra.Command, args []string) error {
-			clientCtx := client.GetClientContextFromCmd(cmd)
+		Use:   "posts",
+		Short: "Query posts",
+		Args:  cobra.ExactArgs(0),
+		RunE: func(cmd *cobra.Command, args []string) (err error) {
+
+			clientCtx, err := client.GetClientTxContext(cmd)
+			if err != nil {
+				return err
+			}
 
 			queryClient := types.NewQueryClient(clientCtx)
 
-			res, err := queryClient.Params(context.Background(), &types.QueryParamsRequest{})
+			params := &types.QueryPostsRequest{}
+
+			res, err := queryClient.Posts(cmd.Context(), params)
 			if err != nil {
 				return err
 			}

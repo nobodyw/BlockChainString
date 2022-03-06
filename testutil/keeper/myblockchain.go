@@ -37,10 +37,10 @@ func MyblockchainKeeper(t testing.TB) (*keeper.Keeper, sdk.Context) {
 		"MyblockchainParams",
 	)
 	k := keeper.NewKeeper(
-	    cdc,
-	    storeKey,
-	    memStoreKey,
-	    paramsSubspace, 
+		cdc,
+		storeKey,
+		memStoreKey,
+		paramsSubspace,
 	)
 
 	ctx := sdk.NewContext(stateStore, tmproto.Header{}, false, log.NewNopLogger())
