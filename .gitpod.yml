@@ -5,7 +5,10 @@
 tasks:
   - init: go get && go build ./... && go test ./...
     command: go run
-  - init: npm install && npm run build
-    command: npm run dev
+
+  - before : sudo su
+    init: curl https://get.starport.network/starport@v0.19.2! | bash
+    command:  exit; starport chain serve
+
 
 
